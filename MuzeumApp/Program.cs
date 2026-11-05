@@ -8,9 +8,9 @@ foreach (var sor in File.ReadAllLines(@"C:\Users\13d\source\repos\MuzeumApp\Muze
         continue;
     }
     string[] adatok = sor.Split('|');
-
-    string azon = adatok[0];
-    int becsult = 0;
+    string tipus = adatok[0];
+    string azon = adatok[1];
+    int becsult;
     int extra;
 
     if (string.IsNullOrWhiteSpace(azon))
@@ -24,7 +24,7 @@ foreach (var sor in File.ReadAllLines(@"C:\Users\13d\source\repos\MuzeumApp\Muze
         continue;
     }
 
-    if (int.TryParse(adatok[1], out becsult) || int.TryParse(adatok[2], out extra))
+    if (int.TryParse(adatok[2], out becsult) || int.TryParse(adatok[3], out extra))
     {
         hiba++;
         continue;
